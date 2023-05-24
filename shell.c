@@ -7,8 +7,4 @@
  */
 
 int main(void)
-{
-        write("Hello world");
-
         return (0);
-}
