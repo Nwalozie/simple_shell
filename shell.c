@@ -8,7 +8,7 @@
 
 int main(void)
 {
-        printf("Hello world");
+        write("Hello world");
 
         return (0);
 }
