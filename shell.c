@@ -1,17 +1,14 @@
-#include "shell.h"
+#include <stdio.h>
 
 /**
- * main - Entry point of the shell program
- * @argc: Number of command-line arguments
- * @argv: Array of command-line arguments
- * @env: Array of environment variables
+ * main - Entry point of the program
  *
- * Return: 0 on success
+ * Return: Always 0 (Success)
  */
-int main(int argc, char **argv, char **env)
+
+int main(void)
 {
-        if (argc == 1)
-                prompt(argv, env);
+        printf("Hello world");
 
         return (0);
 }
