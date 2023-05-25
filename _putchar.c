@@ -9,8 +9,8 @@
  */
 int _putchar(char x)
 {
-        char display;
+	char display;
 
-        display =  (write(1, &x, 1));
-        return (display);
+	display =  (write(1, &x, 1));
+	return (display);
 }

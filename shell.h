@@ -10,7 +10,7 @@
 #include <sys/stat.h>
 #define MAX_COMMAND 20
 
-extern char** environ;
+extern char **environ;
 int _putchar(char x);
 void prompt(char **av, char **env);
 char *get_location(char *command);

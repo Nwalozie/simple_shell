@@ -8,9 +8,9 @@
 
 int str_len(char *y)
 {
-        int x = 0;
+	int x = 0;
 
-        while (y[x] != '\0')
-                x++;
-        return (x);
+	while (y[x] != '\0')
+		x++;
+	return (x);
 }
