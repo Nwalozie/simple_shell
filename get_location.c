@@ -11,7 +11,7 @@ char *get_env(const char *name)
 {
 	int i;
 
-	size_t name_length = strlen(name);
+	size_t name_length = str_len(name);
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
@@ -40,7 +40,7 @@ char *get_location(char *command)
 	if (path)
 	{
 		command_length = str_len(command);
-		path_cp = strdup(path);
+		path_cp = strd_up(path);
 		path_token = strtok(path_cp, ":");
 		while (path_token != NULL)
 		{
