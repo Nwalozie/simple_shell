@@ -12,6 +12,8 @@
 
 extern char **environ;
 char *str_dup(char *str);
+void my_puts(const char *str);
+void child_process(char *str, char **argv, char **env, char **av);
 int _putchar(char x);
 void prompt(char **av, char **env);
 char *get_location(char *command);
