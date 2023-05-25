@@ -122,7 +122,7 @@ void child_process(char *str, char **argv, char **env, char **av)
 void prompt(char **av, char **env)
 {
 	char *str = NULL, *argv[MAX_COMMAND];
-	int i, j = 0;
+	int i, j;
 	size_t x = 0;
 	ssize_t num_char;
 
@@ -142,6 +142,7 @@ void prompt(char **av, char **env)
 				if (str[i] == '\n')
 					str[i] = 0;
 			}
+			j = 0;
 			argv[j] = strtok(str, " ");
 			while (argv[j] != NULL)
 				argv[++j] = strtok(NULL, " ");
