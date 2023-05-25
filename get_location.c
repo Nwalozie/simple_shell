@@ -7,7 +7,7 @@
  * Return: The value of the environment variable, or NULL if not found.
  */
 
-char *get_env(const char *name)
+char *get_env(char *name)
 {
 	int i;
 
