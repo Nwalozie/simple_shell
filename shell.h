@@ -11,6 +11,7 @@
 #define MAX_COMMAND 20
 
 extern char **environ;
+char *str_dup(char *str);
 int _putchar(char x);
 void prompt(char **av, char **env);
 char *get_location(char *command);
