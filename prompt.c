@@ -126,10 +126,11 @@ void prompt(char **av, char **env)
 	size_t x = 0;
 	ssize_t num_char;
 
+	signal(SIGINT, sig_handle);
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-			print_f("cisfun$ ");
+			write(STDOUT_FILENO, "cisfun$ ", 8);
 		num_char = getline(&str, &x, stdin);
 		if (num_char == -1)
 		{

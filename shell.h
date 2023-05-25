@@ -22,5 +22,6 @@ char *str_cat(char *dest, char *src);
 char *str_cpy(char *dest, char *src);
 int str_len(char *y);
 int strn_cmp(const char *str1, const char *str2, size_t n);
+void sig_handle(int sig);
 
 #endif
