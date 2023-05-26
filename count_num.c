@@ -9,21 +9,21 @@
 
 int count_num(int n)
 {
-	unsigned int c;
-	int count = 1;
+        unsigned int c;
+        int count = 1;
 
-	if (n < 0)
-	{
-		count++;
-		c = n * -1;
-	}
-	else
-		c = n;
-	while (c > 9)
-	{
-		count++;
-		c /= 10;
-	}
+        if (n < 0)
+        {
+                count++;
+                c = n * -1;
+        }
+        else
+                c = n;
+        while (c > 9)
+        {
+                count++;
+                c /= 10;
+        }
 
-	return (count);
+        return (count);
 }
