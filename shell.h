@@ -23,5 +23,7 @@ char *str_cpy(char *dest, char *src);
 int str_len(char *y);
 int strn_cmp(const char *str1, const char *str2, size_t n);
 void sig_handle(int sig);
+char *_strtok(char *str, const char *d);
+int count_num(int n);
 
 #endif
