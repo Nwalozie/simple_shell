@@ -9,11 +9,15 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #define MAX_COMMAND 20
+#define DISPLAY(c) (write(STDOUT_FILENO, c, str_len(c)))
 
 extern char **environ;
+char *_itoa(int n);
+void not_found(char *input, int line, char **cmd);
+int count_num(int n);
 char *str_dup(char *str);
 void my_puts(const char *str);
-void child_process(char *str, char **argv, char **env, char **av);
+void child_process(char *str, char **argv, char **env, char **av, int line);
 int _putchar(char x);
 void prompt(char **av, char **env);
 char *get_location(char *command);
@@ -22,6 +26,5 @@ char *str_cat(char *dest, char *src);
 char *str_cpy(char *dest, char *src);
 int str_len(char *y);
 int strn_cmp(const char *str1, const char *str2, size_t n);
-void sig_handle(int sig);
 
 #endif
