@@ -9,14 +9,14 @@
 
 void not_found(char *input, int line, char **cmd)
 {
-        char *num;
+	char *num;
 
-        DISPLAY(cmd[0]);
-        DISPLAY(": ");
-        num = _itoa(line);
-        DISPLAY(num);
-        free(num);
-        DISPLAY(": ");
-        DISPLAY(input);
-        DISPLAY(": not found\n");
+	DISPLAY(cmd[0]);
+	DISPLAY(": ");
+	num = _itoa(line);
+	DISPLAY(num);
+	free(num);
+	DISPLAY(": ");
+	DISPLAY(input);
+	DISPLAY(": not found\n");
 }
