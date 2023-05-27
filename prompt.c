@@ -93,7 +93,7 @@ void print_f(const char *format, ...)
  * @av: Command name
  */
 
-void child_process(char *str, char **argv, char **env, char **av, int line)
+void child_process(char *str, char **argv, char **av, int line)
 {
 	int stat;
 	char *act_command;
@@ -107,7 +107,7 @@ void child_process(char *str, char **argv, char **env, char **av, int line)
 	if (child_pid == 0)
 	{
 		act_command = get_location(argv[0]);
-		if (execve(act_command, argv, env) == -1)
+		if (execve(act_command, argv, environ) == -1)
 			not_found(str, line, av);
 		/* print_f("%s No such file or directory\n", av[0]); */
 		exit(0);
@@ -121,7 +121,7 @@ void child_process(char *str, char **argv, char **env, char **av, int line)
  * @env: Array of environment variables
  */
 
-void prompt(char **av, char **env)
+void prompt(char **av)
 {
 	char *str = NULL, *argv[MAX_COMMAND];
 	int i, j, m;
@@ -155,7 +155,7 @@ void prompt(char **av, char **env)
 				break;
 			}
 			argv[++j] = strtok(NULL, " ");
-			child_process(str, argv, env, av, m++);
+			child_process(str, argv, av, m++);
 		}
 	}
 }

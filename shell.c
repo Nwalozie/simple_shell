@@ -8,11 +8,11 @@
  *
  * Return: 0 on success
  */
-int main(int argc, char **argv, char **env)
+int main(int argc, char **argv)
 {
 	(void)argc;
-	/*if (argc == 1)*/
-	prompt(argv, env);
+	/*if (argc ==  1)*/
+	prompt(argv);
 
 	return (0);
 }
