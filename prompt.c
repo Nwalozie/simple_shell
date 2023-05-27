@@ -124,9 +124,10 @@ void child_process(char *str, char **argv, char **av, int line)
 void prompt(char **av)
 {
 	char *str = NULL, *argv[MAX_COMMAND];
-	int i, j, m;
+	int i, j, m, num = 0;
 	size_t x = 0;
 	ssize_t num_char;
+	pid_t _echo = getpid();
 
 	m = 1;
 	while (1)
@@ -159,6 +160,14 @@ void prompt(char **av)
 				free(str), exit(EXIT_SUCCESS);
 				break;
 			}
+			if (str_cmp(argv[0], "echo") == 0)
+                        {
+				 if (str_cmp(argv[1], "$?") == 0)
+					 print_f("%d\n", num);
+				  if (str_cmp(argv[1], "$$") == 0)
+					print_f("%d\n", _echo);
+				break;  
+                        }
 			argv[++j] = strtok(NULL, " ");
 			child_process(str, argv, av, m++);
 		}
