@@ -157,17 +157,29 @@ void prompt(char **av)
 				argv[++j] = strtok(NULL, " ");
 			if (str_cmp(argv[0], "exit") == 0)
 			{
+				if (argv[1])
+				{
+					if (atoi(argv[1]))
+					{
+						num = atoi(argv[1]);
+						if (num > 232)
+						       num = 232;
+						free(str);
+						exit(num);
+					}
+				}
+
 				free(str), exit(EXIT_SUCCESS);
 				break;
 			}
 			if (str_cmp(argv[0], "echo") == 0)
-                        {
-				 if (str_cmp(argv[1], "$?") == 0)
-					 print_f("%d\n", num);
-				  if (str_cmp(argv[1], "$$") == 0)
+			{
+				if (str_cmp(argv[1], "$?") == 0)
+					print_f("%d\n", num);
+				if (str_cmp(argv[1], "$$") == 0)
 					print_f("%d\n", _echo);
 				break;  
-                        }
+			}
 			argv[++j] = strtok(NULL, " ");
 			child_process(str, argv, av, m++);
 		}
