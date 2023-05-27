@@ -138,6 +138,11 @@ void prompt(char **av)
 		{
 			free(str), exit(0);
 		}
+		for (i=0; str[i]; i++)
+		{
+			if (str[i] == '#')
+				str[i] = '\0';
+		}
 		if (str_cmp(str, "\n") != 0)
 		{
 			for (i = 0; str[i]; i++)
